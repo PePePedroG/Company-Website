@@ -1,0 +1,141 @@
+/* Colors */
+$whiteColor: #fff;
+$orangeColor: #E63D00;
+$darkColor: #343A40;
+$greyColor: #D1D1D1;
+/* Fonts */
+$headers: 'Open Sans';
+$defoult: 'Ubuntu';
+/* Fonts Size */
+$defoultFont-size: 19px;
+*{
+    box-sizing: border-box;
+}
+.btn{
+    border: none;
+    width: 15rem;
+    height: 4rem;
+    background: transparent;
+    border: 3px solid;
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: 500;
+    transition: .4s;
+    &:focus{
+        outline: none;
+        box-shadow: 5px 9px 19px -8px rgba(0,0,0,0.75);
+    }
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.section{
+    text-align: center;
+    padding-top: 8vw;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top center;
+    font-family: 'Ubuntu';
+    .counters {
+        background-color: $greyColor;
+        counter-reset: sectionNumber;
+    }
+    .nav-item{
+        margin: 0 30px;
+        font-size: 20px;
+    }
+    .header{
+        font-size: 4rem;
+        font-family: $headers;
+        font-weight: bolder !important;
+    }
+    &-header{
+        background-image: url('../gallery/backgrounds/headerBg.png');
+        text-align: center;
+        color: $whiteColor;
+        padding-top: 2vw;
+        position: relative;
+        .row{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &__header{
+            font-weight: bolder !important;
+        }
+        &__paragraph{
+            margin: 2rem 0;
+            font-size: $defoultFont-size;
+        }
+        &__btn{
+            border-color: $orangeColor;
+            color: $whiteColor;
+            &:hover{
+                background: $orangeColor;
+                color: $whiteColor;
+            }
+        }
+    }
+    &-about{
+        text-align: left;
+        position: relative;
+        &__header{
+            
+            &::after{
+                display: block;
+                width: 25%;
+                background: $orangeColor;
+                height: 4px;
+                content: '';
+            }
+            &::before{
+                counter-increment: sectionNumber;
+                content: '0' counter(sectionNumber) ' ';
+                position: absolute;
+                left: -7rem;
+                top: -1rem;
+                color: $greyColor;
+                font-size: 6rem;
+                font-family: $headers;
+                font-weight: bold;
+            }
+        }
+        &__img{
+            background-image: url('../gallery/about_img.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            min-height: 69vh;
+        }
+        &__paragraph{
+            margin: 3rem 0 2rem 5rem;
+            font-size: $defoultFont-size;
+            color: $darkColor;
+            line-height: 37px;
+        }
+        &__btn {
+            margin-left: 5rem;
+            background: $darkColor;
+            color: $whiteColor;
+            border-color: $darkColor;
+            &:hover{
+                background: $whiteColor;
+                color: $darkColor;
+            }
+        }
+        
+            
+        
+    }
+    /* 
+    &-about{
+
+    }
+    &-team{
+
+    } */
+}
