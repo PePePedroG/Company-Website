@@ -5,9 +5,9 @@ $darkColor: #343A40;
 $greyColor: #D1D1D1;
 /* Fonts */
 $headers: 'Open Sans';
-$defoult: 'Ubuntu';
+$default: 'Ubuntu';
 /* Fonts Size */
-$defoultFont-size: 19px;
+$defaultFont-size: 19px;
 *{
     box-sizing: border-box;
 }
@@ -32,7 +32,7 @@ html, body{
 }
 .section{
     text-align: center;
-    padding-top: 8vw;
+    padding: 8vw 0;
     min-height: 100vh;
     width: 100%;
     background-size: cover;
@@ -69,7 +69,7 @@ html, body{
         }
         &__paragraph{
             margin: 2rem 0;
-            font-size: $defoultFont-size;
+            font-size: $defaultFont-size;
         }
         &__btn{
             border-color: $orangeColor;
@@ -84,22 +84,21 @@ html, body{
         text-align: left;
         position: relative;
         &__header{
-            
+            position: relative;
             &::after{
                 display: block;
-                width: 25%;
+                width: 113px;
                 background: $orangeColor;
-                height: 4px;
+                height: 6px;
                 content: '';
             }
             &::before{
-                counter-increment: sectionNumber;
-                content: '0' counter(sectionNumber) ' ';
+                content: '01';
                 position: absolute;
-                left: -7rem;
+                left: -8rem;
                 top: -1rem;
                 color: $greyColor;
-                font-size: 6rem;
+                font-size: 5.5rem;
                 font-family: $headers;
                 font-weight: bold;
             }
@@ -113,7 +112,7 @@ html, body{
         }
         &__paragraph{
             margin: 3rem 0 2rem 5rem;
-            font-size: $defoultFont-size;
+            font-size: $defaultFont-size;
             color: $darkColor;
             line-height: 37px;
         }
@@ -127,9 +126,64 @@ html, body{
                 color: $darkColor;
             }
         }
-        
+    &__features{
+        margin-top: 10vw;
+        text-align: center;
+        &__icon{
+            width: 230px;
+            height: 170px;
+            .mechanism{
+                background-image: url('../gallery/icons/icon__about/mechanism.svg');
+                background-size: contain;
+                display: block;
+            }
+            .rwd{
+                background-image: url('../gallery/icons/icon__about/rwd.svg');
+                background-size: contain;
+                display: block;
+            }
+            .statistics{
+                background-image: url('../gallery/icons/icon__about/statistics.svg');
+                background-size: contain;
+                display: block;
+            }
+        }
+        &__paragraph{
+            font-size: $defaultFont-size;
+            margin-top: 2rem;
+        }
+    }   
             
         
+    }
+    &-team{
+        background-image: url('../gallery/backgrounds//team.svg');
+        text-align: left;
+        color: $whiteColor;
+        position: relative;
+        &__header{
+            position: relative;
+            &::after{
+                display: block;
+                width: 113px;
+                background: $orangeColor;
+                height: 6px;
+                content: '';
+            }
+            &::before{
+                content: '02';
+                position: absolute;
+                left: -8rem;
+                top: -1rem;
+                color: $greyColor;
+                font-size: 5.5rem;
+                font-family: $headers;
+                font-weight: bold;
+            }
+        }
+        &__deck{
+            
+        }
     }
     /* 
     &-about{
